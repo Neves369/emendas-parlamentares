@@ -35,7 +35,7 @@ export default function Home() {
             <div className="h-full bg-primary animate-slide-in-left w-full" />
           </div>
           <span className="text-primary font-mono text-[10px] tracking-[0.4em] uppercase">
-            System Booting
+            Iniciando...
           </span>
         </div>
       </div>
@@ -82,9 +82,11 @@ export default function Home() {
                 R$ {(total_geral / 1_000_000).toFixed(2)}M
               </p>
             </div>
-            <button className="bg-primary text-background px-8 py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:brightness-110 transition-all flex items-center gap-2">
-              Download da Base de Dados <ArrowRight className="w-4 h-4" />
-            </button>
+            <a href="/EMENDAS_2025.xlsx" download="EMENDAS_2025.xlsx">
+              <button className="bg-primary text-background px-8 py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:brightness-110 transition-all flex items-center gap-2">
+                Download da Base de Dados <ArrowRight className="w-4 h-4" />
+              </button>
+            </a>
           </div>
         </div>
       </header>
