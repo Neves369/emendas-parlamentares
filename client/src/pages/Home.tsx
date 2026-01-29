@@ -41,8 +41,15 @@ export default function Home() {
       </div>
     );
 
-  const { total_geral, total_por_estrutura, total_por_mes, top_recursos } =
-    data.metrics;
+  const {
+    total_geral,
+    total_por_autor,
+    total_por_origem,
+    total_por_funcao,
+    total_por_mes,
+  } = data.metrics;
+
+  const raw_data = data.raw_data;
 
   return (
     <div className="min-h-screen flex flex-col w-full overflow-x-hidden">
@@ -76,7 +83,7 @@ export default function Home() {
               </p>
             </div>
             <button className="bg-primary text-background px-8 py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:brightness-110 transition-all flex items-center gap-2">
-              Acessar Base de Dados <ArrowRight className="w-4 h-4" />
+              Download da Base de Dados <ArrowRight className="w-4 h-4" />
             </button>
           </div>
         </div>
@@ -92,9 +99,9 @@ export default function Home() {
             icon={<Wallet />}
           />
           <MetricCard
-            title="Unidade Líder"
-            value={total_por_estrutura[0].Estrutura.split(" ")[0]}
-            subtitle="Maior retenção de recursos"
+            title="Fonte de Origem Principal"
+            value={total_por_origem[0].Estrutura}
+            subtitle="Maior fonte de recursos"
             icon={<BarChart3 />}
           />
           <MetricCard
@@ -104,9 +111,9 @@ export default function Home() {
             icon={<Calendar />}
           />
           <MetricCard
-            title="Parlamentares"
-            value={total_por_estrutura.length}
-            subtitle="Quantidade de Parlamentares"
+            title="Autores"
+            value={total_por_autor.length}
+            subtitle="Quantidade de Parlamentares Contribuintes"
             icon={<Globe />}
           />
         </section>
@@ -118,7 +125,7 @@ export default function Home() {
               <div className="flex items-center gap-3">
                 <Activity className="text-primary w-5 h-5" />
                 <h3 className="font-bold text-xl uppercase tracking-widest italic">
-                  Valor dos Recursos Mês a Mês
+                  Valor dos Recursos Ano a Ano
                 </h3>
               </div>
               <div className="h-px flex-1 mx-8 bg-white/5" />
@@ -130,10 +137,10 @@ export default function Home() {
 
           <div className="xl:col-span-1 bg-card border border-border p-10 rounded-[2.5rem]">
             <h3 className="font-bold text-xl uppercase tracking-widest italic mb-12 text-primary">
-              Recursos por Estrutura
+              Recursos por Função
             </h3>
             <div className="h-[450px]">
-              <StructureChart data={total_por_estrutura} />
+              <StructureChart data={total_por_funcao} />
             </div>
           </div>
         </div>
@@ -149,12 +156,12 @@ export default function Home() {
             </p>
           </div>
           <div className="w-full xl:flex-1 bg-background/10 backdrop-blur-3xl rounded-[2rem] p-10 border border-white/10 shadow-3xl">
-            <TopResourcesChart data={top_recursos} />
+            <TopResourcesChart data={total_por_autor} />
           </div>
         </section>
 
         <div className="w-full mt-10">
-          <ParliamentaryAmendmentsTable />
+          <ParliamentaryAmendmentsTable data={raw_data} />
         </div>
       </main>
 

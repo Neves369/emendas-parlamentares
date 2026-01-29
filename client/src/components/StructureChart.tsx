@@ -37,7 +37,7 @@ export default function StructureChart({ data }: { data: any[] }) {
           />
           {/* Aumentamos o domínio (domain) para criar teto para a label */}
           <YAxis
-            domain={[0, "dataMax + 20000000"]}
+            domain={[0, "dataMax + 200000"]}
             tick={{ fill: "#000000", fontSize: 12, fontWeight: 600 }}
             axisLine={{ stroke: "rgba(255,255,255,0.2)" }}
             tickFormatter={value => `${(value / 1_000_000).toFixed(0)}M`}
