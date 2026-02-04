@@ -65,8 +65,7 @@ export default function Home() {
             </div>
             <div>
               <h1 className="text-3xl font-black uppercase tracking-tighter italic leading-none">
-                Prefeitura Municipal de Teresópolis{" "}
-                <span className="text-primary"></span>
+                Município de Teresópolis <span className="text-primary"></span>
               </h1>
               <div className="flex items-center gap-2 mt-2">
                 <p className="text-[10px] text-muted-foreground font-mono tracking-widest uppercase">
