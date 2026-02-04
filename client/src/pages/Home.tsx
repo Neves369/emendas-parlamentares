@@ -99,7 +99,7 @@ export default function Home() {
         <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <MetricCard
             title="Capital Alocado"
-            value={`R$ ${(total_geral / 1_000_000).toFixed(1)} Milhões`}
+            value={`R$ ${(total_geral / 1_000_000).toFixed(2)} Milhões`}
             subtitle="Volume total processado"
             icon={<Wallet />}
           />
