@@ -161,6 +161,7 @@ export default function Home() {
             <p className="text-background/70 text-xl font-medium tracking-tight">
               3 parlamentares que mais destinaram recursos para o município.
             </p>
+            <img src="images/image.png" />
           </div>
           <div className="w-full xl:flex-1 bg-background/10 backdrop-blur-3xl rounded-[2rem] p-0 border border-white/10 shadow-3xl">
             <TopResourcesChart data={total_por_autor.slice(0, 3)} />
