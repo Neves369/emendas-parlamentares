@@ -114,7 +114,7 @@ export default function Home() {
           <MetricCard
             title="Maior Recurso Proposto"
             value={categoriaLider[0]}
-            subtitle={`Com mais de R$ ${(categoriaLider[1] / 1_000_000).toFixed(2)}M alocados`}
+            subtitle={`Com mais de R$ ${(categoriaLider[1] / 1_000_000).toFixed(2)}Milhões alocados`}
             icon={<Target />}
           />
           <MetricCard
